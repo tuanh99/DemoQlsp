@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuAnh</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        .main{
+            /* text-align: center; */
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+        }
+        .administrator{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .content-administrasor{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .content{
+            border: 1px dashed #ccc;
+            height: 185px;
+            background-color: #f7f2f2;
+            /* display: flex; */
+            justify-content: center;
+            justify-items: center;
+        }
+        .atop-table{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px;
+
+
+        }
+        .add button{
+            background-color: #1fee9b;
+            color: #000;
+            /* animation-name: loadmore; */
+            animation: add  2s linear infinite;
+            transition: all 1s ;
+            border-radius: 6px;
+            width: 50px;
+            height: 30px;
+            /* outline: none; */
+            border: none;
+            cursor: pointer;
+            
+        }
+        @keyframes add {
+            from{ background-color: #1fee9b;}
+            to{ background-color:#8b83f0;}
+        }
+        table,th,td{
+            border: 1px solid black;
+        }
+        table{
+            margin: 0 auto;
+            display: table;
+            background-color: white;
+            /* align-items: center; */
+            /* justify-content: center; */
+            /* box-sizing: border-box; */
+        }
+        button{
+            background-color: aqua;
+            border-radius: 5px;
+            border: none;
+            width: 80px;
+            height: 40px;
+
+        }
+        .button-administrator button{
+            width: 80px;
+            height: 30px;
+
+        }
+        a{
+            text-decoration: none;
+
+        }
+        .icon{
+            text-align: center;
+        }
+        #blockSubmit{
+            margin: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0,0,0, 0.5 );
+            display: none;
+            /* position: fixed; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            
+        }
+        ul{
+            width: 500px;
+            height: 600px;
+            background-color: #1fee9b;
+            text-align: center;
+            align-items: center;
+            list-style: none;
+            padding-inline-start: unset;
+            background-color: #fff;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px 5px #ccc;
+        }
+        li{
+            box-sizing: border-box;
+            margin-bottom: 50px;
+            height: 100%;
+            font-size: 18px;
+        }
+        .header{
+            display: flex;
+            width: 500px;
+            justify-content:space-between;
+        }
+        .header-icon,
+        .header-content{
+            margin: 10px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        li input{
+            border: none;
+            border-radius: 4px;
+            width: 250px;
+            height: 30px;
+            background-color:#1fee9b;
+        }
+        .radio{
+            width: 10px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div id="blockSubmit">
+            <ul>
+                <li><div class="header">
+                    <div class="header-content">
+                        Category
+                    </div>
+                    <div class="header-icon">
+                        <i class="fas fa-times closeIcon"></i>
+                    </div></div></li>
+                <li>Name <br>
+                    <input type="text"></li>
+                
+                <li>Description <br>
+                    <input type="text"></li>
+                <li>Active
+                    <input class="radio" type="radio" name="active" value="On">
+                    <label for="On">On</label>
+                    <input class="radio" type="radio" name="active" value="Off">
+                    <label for="Off">Off</label></li>
+                <li>Display Order <br>
+                    <input type="number"></li>
+                <li><div class="submit"><button><a id="submit" >Submit</a></button></div></li>
+            </ul>
+        </div>
+        <div class="administrator">
+            <div class="content-administrasor">
+                Administrator
+            </div>
+            <div class="button-administrator">
+                <button style="background-color: #f7f2f2;"><a href="#">Category</a></button>
+                <button ><a href="product.html">Product</a></button>
+                <button><a href="#">Exit</a></button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="atop-table">
+                
+            <div class="category"> Category
+            </div>
+            <div class="add" id="addButton"> <button>Add</button>
+            </div>
+        </div>
+            <div class="table">
+                <table >
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Active</th>
+                        <th>Display Order</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Clothes</td>
+                        <td class="description">Swimsuits, jackets, sweaters, sportswear, shirts, skirts, long dresses (for women),..</td>
+                        <td>On</td>
+                        <td>299</td>
+                        <td class="icon"><i class="fas fa-edit"></i></td>
+                        <td class="icon"><i class="fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Accessory</td>
+                        <td class="description">Hats, caps, scarves, belts, gloves,..</td>
+                        <td>On</td>
+                        <td>66</td>
+                        <td class="icon"><i class="fas fa-edit"></i></td>
+                        <td class="icon"><i class="fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Jewelry</td>
+                        <td class="description">Necklaces, bracelets, rings, earrings, anklets,...</td>
+                        <td>On</td>
+                        <td>88</td>
+                        <td class="icon"><i class="fas fa-edit"></i></td>
+                        <td class="icon"><i class="fas fa-trash-alt"></i></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+</div>
+<script>
+    document.getElementById("addButton").addEventListener("click", function() {
+    var blockSubmit = document.getElementById("blockSubmit");
+    blockSubmit.style.display = "inline-block";
+    function showBlockSubmit() {
+    // Thiết lập display thành block để hiển thị
+    blockSubmit.style.display = "flex";
+
+    
+}
+
+// Gọi hàm khi cần hiển thị blockSubmit
+showBlockSubmit();
+});
+    
+document.getElementById("blockSubmit").addEventListener("click", function(event) {
+    if (event.target.classList.contains("closeIcon")) {
+        var blockSubmit = document.getElementById("blockSubmit");
+        blockSubmit.style.display = "none";
+    }
+    var ul = blockContainer.querySelector(".centered-list");
+    ul.style.display = "inline-block";
+});
+
+// document.querySelector("#addButton").onclick = function () {
+//     document.querySelector(".admin").style.display = "flex";
+// }
+document.getElementById("submit").addEventListener("click", function(event) {
+    // Ngăn chặn hành vi mặc định của thẻ <a>, ngăn trình duyệt chuyển đến đường link
+    event.preventDefault();
+
+    // Hiển thị thông báo
+    alert("Thêm thành công");
+
+    // Chuyển hướng đến đường link index.html
+    window.location.href = "category.html";
+});
+</script>
+</body>
+</html>
